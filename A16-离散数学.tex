@@ -2410,37 +2410,37 @@ $\cos x$, 它们的图像都具有这样的特点, 即 {\kaishu 能够做出两�
     \end{proof}
 \end{example}
 
-\section{运算与运算律}
+% \section{运算与运算律}
 
-现代代数学研究的核心内容, 就是代数系统的结构及其保持运算性质的映射 (称为态射).
+% 现代代数学研究的核心内容, 就是代数系统的结构及其保持运算性质的映射 (称为态射).
 
-设 $S$ 是一个集合, 则 $S$ 上的 $n$ 个元素 $x_1, x_2, \cdots, x_n$ 构成的一个 $n$
-元有序组 $(x_1, x_2, \cdots, x_n)$ 称为一个 $n$ \textbf{元组} (tuple).
+% 设 $S$ 是一个集合, 则 $S$ 上的 $n$ 个元素 $x_1, x_2, \cdots, x_n$ 构成的一个 $n$
+% 元有序组 $(x_1, x_2, \cdots, x_n)$ 称为一个 $n$ \textbf{元组} (tuple).
 
-\begin{definition}
-    设 $A,B$ 是两个集合, 则所有形如 $(a,b)$ 的元组组成的集合
-    \[ A \times B := \left\{
-        (a,b) | a \in A \wedge b \in B
-    \right\} \]
-    称为 $A$ 与 $B$ 的一个 \textbf{Descartes 积}.
-\end{definition}
+% \begin{definition}
+%     设 $A,B$ 是两个集合, 则所有形如 $(a,b)$ 的元组组成的集合
+%     \[ A \times B := \left\{
+%         (a,b) | a \in A \wedge b \in B
+%     \right\} \]
+%     称为 $A$ 与 $B$ 的一个 \textbf{Descartes 积}.
+% \end{definition}
 
-集合 $A$ 与它自身的 Descartes 积, 可以简记作 $A^2$.
+% 集合 $A$ 与它自身的 Descartes 积, 可以简记作 $A^2$.
 
-\begin{definition}[二元代数运算]
-    设 $S$ 是一个集合, 将映射 $f:S^2 \to S$ 称为 $S$ 的\textbf{二元代数运算}
-    (binary algebratic operation). 它把 $S$ 中的二元组 $x,y$ 变成 $S$ 中的另一个元素,
-    记作 $x \circ y$.
-\end{definition}
+% \begin{definition}[二元代数运算]
+%     设 $S$ 是一个集合, 将映射 $f:S^2 \to S$ 称为 $S$ 的\textbf{二元代数运算}
+%     (binary algebratic operation). 它把 $S$ 中的二元组 $x,y$ 变成 $S$ 中的另一个元素,
+%     记作 $x \circ y$.
+% \end{definition}
 
-运算律指的是对于某个代数运算恒成立的等式. 在现代代数学中, 我们关注的运算律主要有:
-\begin{enumerate}[label={${\arabic*}^\circ$}, itemsep=0pt]
-    \item 交换律: $a \circ b = b \circ a$.
-    \item 结合律: $a \circ (b \circ c) = (a \circ b) \circ c$.
-\end{enumerate}
+% 运算律指的是对于某个代数运算恒成立的等式. 在现代代数学中, 我们关注的运算律主要有:
+% \begin{enumerate}[label={${\arabic*}^\circ$}, itemsep=0pt]
+%     \item 交换律: $a \circ b = b \circ a$.
+%     \item 结合律: $a \circ (b \circ c) = (a \circ b) \circ c$.
+% \end{enumerate}
 
-\section{等价关系与集合的划分}
-\section{同态与同构}
+% \section{等价关系与集合的划分}
+% \section{同态与同构}
 
 \newpage
 \thispagestyle{empty}
@@ -2706,39 +2706,39 @@ $B^n$ 是这个布尔函数的定义域, $B$ 是这个布尔函数的到达域. 
     $\bar x$ & $\lnot x$ & 补集 $\bar X$ \\
 \end{longtable}}
 
-\section{布尔函数的析取范式}
-\section{布尔函数析取范式的化简}
+% \section{布尔函数的析取范式}
+% \section{布尔函数析取范式的化简}
 
-\chapter{关系}
+% \chapter{关系}
 
-\section{关系及其性质}
-\section{关系的表示}
-\subsection{计算问题与探索性问题}
+% \section{关系及其性质}
+% \section{关系的表示}
+% \subsection{计算问题与探索性问题}
 
-\begin{exercise}
-    给定表示定义在有穷集上的关系的矩阵, 确定这个关系是否是自反的 (即具有反身性的) 或反自反的.
-    \begin{sol}
-        我们知道, 一个关系是自反的, 那么表示它的矩阵的主对角线上应该全为 $1$, 一个关系是反自反
-        的, 那么表示它的矩阵的主对角线上应该全为 $0$. 我们采用 \lstinline|numpy| 软件包
-        提供的 \lstinline|array| 数组来作为输入矩阵的存储结构.
-    \end{sol}
-    \begin{code} \lstinline|is_reflexive.py|
-        \begin{lstlisting}[language=Python]
-import numpy as np
+% \begin{exercise}
+%     给定表示定义在有穷集上的关系的矩阵, 确定这个关系是否是自反的 (即具有反身性的) 或反自反的.
+%     \begin{sol}
+%         我们知道, 一个关系是自反的, 那么表示它的矩阵的主对角线上应该全为 $1$, 一个关系是反自反
+%         的, 那么表示它的矩阵的主对角线上应该全为 $0$. 我们采用 \lstinline|numpy| 软件包
+%         提供的 \lstinline|array| 数组来作为输入矩阵的存储结构.
+%     \end{sol}
+%     \begin{code} \lstinline|is_reflexive.py|
+%         \begin{lstlisting}[language=Python]
+% import numpy as np
 
 
-def is_reflexive(relationship: np.ndarray) -> bool:
-    if relationship.shape[0] != relationship.shape[1]: return False
-    return np.all(np.diag(relationship) == 1)
+% def is_reflexive(relationship: np.ndarray) -> bool:
+%     if relationship.shape[0] != relationship.shape[1]: return False
+%     return np.all(np.diag(relationship) == 1)
 
     
-relationship = np.array([[1, 1, 0],
-                            [1, 1, 1],
-                            [0, 1, 1]])
-print(is_reflexive(relationship))
-        \end{lstlisting}
-    \end{code}
-\end{exercise}
+% relationship = np.array([[1, 1, 0],
+%                             [1, 1, 1],
+%                             [0, 1, 1]])
+% print(is_reflexive(relationship))
+%         \end{lstlisting}
+%     \end{code}
+% \end{exercise}
 
 
 
@@ -3146,18 +3146,18 @@ print(is_reflexive(relationship))
     \textbf{导出的子图}.
 \end{definition}
 
-\subsubsection{增删图中的边}
-\subsubsection{边的收缩}
-\subsubsection{删除图中的顶点}
-\subsubsection{图的并集}
+% \subsubsection{增删图中的边}
+% \subsubsection{边的收缩}
+% \subsubsection{删除图中的顶点}
+% \subsubsection{图的并集}
 
 \newpage
 \section{图的表示和图的同构}
 
-\subsection{邻接表}
-\subsection{邻接矩阵}
-\subsection{关联矩阵}
-\subsection{图的同构}
+% \subsection{邻接表}
+% \subsection{邻接矩阵}
+% \subsection{关联矩阵}
+% \subsection{图的同构}
 
 \begin{definition}
     设 $G_1 = (V_1, E_1)$, $G_2 = (V_2, E_2)$ 是简单图, 若存在双射 $f: V_1 \to V_2$
@@ -3191,105 +3191,105 @@ print(is_reflexive(relationship))
     \end{proof}
 \end{property}
 
-\newpage
-\section{连通性}
+% \newpage
+% \section{连通性}
 
 
 
-\newpage
-\section{Euler 通路与 Hamilton 通路}
-\section{最短通路问题}
-\section{平面图}
-\section{图着色}
+% \newpage
+% \section{Euler 通路与 Hamilton 通路}
+% \section{最短通路问题}
+% \section{平面图}
+% \section{图着色}
 
-\newpage
-\thispagestyle{empty}
+% \newpage
+% \thispagestyle{empty}
 
-\chapter{归纳与递归}
+% \chapter{归纳与递归}
 
-\section{递归算法}
+% \section{递归算法}
 
-如果一个算法通过把问题归约到带有更小输入的相同问题的实例来解决原来的问题, 则这个算法是递归的.
-本节我们介绍若干的递归算法, 然后给出它们在 C、Java 或者 Python 中的实现, 并简要分析在递归
-求解过程中递归算法是如何工作的.
+% 如果一个算法通过把问题归约到带有更小输入的相同问题的实例来解决原来的问题, 则这个算法是递归的.
+% 本节我们介绍若干的递归算法, 然后给出它们在 C、Java 或者 Python 中的实现, 并简要分析在递归
+% 求解过程中递归算法是如何工作的.
 
-\begin{example}
-    给出计算 $n$ 的阶乘 $n!$ 的递归算法.
-    \begin{sol}
-        我们知道, $n! = n \cdot (n-1)!$, 而规定 $0! = 1! = 1$,
-        因此我们可以给出求 $n!$ 的递归算法
-        (使用 Python 语言描述) 为
-        \begin{lstlisting}[language=Python]
-def factorial(n: int) -> int:
-    return n * factorial(n - 1) if n != 1 and n != 0 else 1
-        \end{lstlisting}
-        表 \ref{example: factorial_3} 以计算 $3!$ 为例解释了算法是如何运行的, 该过程中调用栈的变化如表 \ref{example: factorial_3_stack} 所示.
-        {\captionof{table}{求解 $3!$ 的递归算法} % 表格标题
-        \label{example: factorial_3} % 交叉引用标签
-        \begin{longtable}{cccp{16em}}
-            \toprule
-            % 表头
-            \textbf{调用者} & \textbf{被调用者} & \textbf{返回值} & \textbf{对调用栈和现场的操作} \\
-            \toprule
-            \endhead
-            \bottomrule
-            \endfoot
+% \begin{example}
+%     给出计算 $n$ 的阶乘 $n!$ 的递归算法.
+%     \begin{sol}
+%         我们知道, $n! = n \cdot (n-1)!$, 而规定 $0! = 1! = 1$,
+%         因此我们可以给出求 $n!$ 的递归算法
+%         (使用 Python 语言描述) 为
+%         \begin{lstlisting}[language=Python]
+% def factorial(n: int) -> int:
+%     return n * factorial(n - 1) if n != 1 and n != 0 else 1
+%         \end{lstlisting}
+%         表 \ref{example: factorial_3} 以计算 $3!$ 为例解释了算法是如何运行的, 该过程中调用栈的变化如表 \ref{example: factorial_3_stack} 所示.
+%         {\captionof{table}{求解 $3!$ 的递归算法} % 表格标题
+%         \label{example: factorial_3} % 交叉引用标签
+%         \begin{longtable}{cccp{16em}}
+%             \toprule
+%             % 表头
+%             \textbf{调用者} & \textbf{被调用者} & \textbf{返回值} & \textbf{对调用栈和现场的操作} \\
+%             \toprule
+%             \endhead
+%             \bottomrule
+%             \endfoot
         
-            % 表格内容
-            上级调用者 & \lstinline|factorial(3)| & \lstinline|3 * factorial(2)| & 入栈, 保留现场, \lstinline|factorial(2)| 入栈 \\
-            \lstinline|factorial(3)| & \lstinline|factorial(2)| & \lstinline|2 * factorial(1)| & 保留现场, \lstinline|factorial(1)|  入栈\\ 
-            \lstinline|factorial(2)| & \lstinline|factorial(1)| & \lstinline|1| & 出栈, 向 \lstinline|factorial(2)| 传递结果并恢复其现场 \\
-            \lstinline|factorial(2)| & \lstinline|factorial(2)| & \lstinline|2| & 出栈, 向 \lstinline|factorial(3)| 传递结果并恢复其现场 \\ 
-            上级调用者 & \lstinline|factorial(3)| & \lstinline|6| & 出栈, 将最终结果传递给上级调用者 \\
-        \end{longtable}}
-        {\captionof{table}{递归求解 $3!$ 的过程中调用栈的变化} % 表格标题
-        \label{example: factorial_3_stack} % 交叉引用标签
-        \begin{longtable}{|c|c|c|c|c|}
-            % 表头
-            \textbf{第一步} & \textbf{第二步} & \textbf{第三步} & \textbf{第四步} & \textbf{第五步} \\ 
+%             % 表格内容
+%             上级调用者 & \lstinline|factorial(3)| & \lstinline|3 * factorial(2)| & 入栈, 保留现场, \lstinline|factorial(2)| 入栈 \\
+%             \lstinline|factorial(3)| & \lstinline|factorial(2)| & \lstinline|2 * factorial(1)| & 保留现场, \lstinline|factorial(1)|  入栈\\ 
+%             \lstinline|factorial(2)| & \lstinline|factorial(1)| & \lstinline|1| & 出栈, 向 \lstinline|factorial(2)| 传递结果并恢复其现场 \\
+%             \lstinline|factorial(2)| & \lstinline|factorial(2)| & \lstinline|2| & 出栈, 向 \lstinline|factorial(3)| 传递结果并恢复其现场 \\ 
+%             上级调用者 & \lstinline|factorial(3)| & \lstinline|6| & 出栈, 将最终结果传递给上级调用者 \\
+%         \end{longtable}}
+%         {\captionof{table}{递归求解 $3!$ 的过程中调用栈的变化} % 表格标题
+%         \label{example: factorial_3_stack} % 交叉引用标签
+%         \begin{longtable}{|c|c|c|c|c|}
+%             % 表头
+%             \textbf{第一步} & \textbf{第二步} & \textbf{第三步} & \textbf{第四步} & \textbf{第五步} \\ 
             
-            \endhead
-            \endfoot
+%             \endhead
+%             \endfoot
         
-            % 表格内容
-            && \lstinline|factorial(1)| && \\ 
-            & \lstinline|factorial(2)| & \lstinline|factorial(2)| & \lstinline|factorial(2)| & \\ 
-            \lstinline|factorial(3)| & \lstinline|factorial(3)| & \lstinline|factorial(3)| & \lstinline|factorial(3)| & \lstinline|factorial(3)| \\
-            上级调用者 & 上级调用者 & 上级调用者 & 上级调用者 & 上级调用者 \\
-            \hline
-        \end{longtable}}
-    \end{sol}
-\end{example}
+%             % 表格内容
+%             && \lstinline|factorial(1)| && \\ 
+%             & \lstinline|factorial(2)| & \lstinline|factorial(2)| & \lstinline|factorial(2)| & \\ 
+%             \lstinline|factorial(3)| & \lstinline|factorial(3)| & \lstinline|factorial(3)| & \lstinline|factorial(3)| & \lstinline|factorial(3)| \\
+%             上级调用者 & 上级调用者 & 上级调用者 & 上级调用者 & 上级调用者 \\
+%             \hline
+%         \end{longtable}}
+%     \end{sol}
+% \end{example}
 
-\begin{example}
-    给出计算非零实数 $a$ 的非负整数幂 $a^n$ 的递归算法.
-    \begin{sol}
-        我们知道, $a^n = a \cdot a^{n-1}$, 于是我们可以给出如下所示的递归算法:
-\begin{lstlisting}[language=Python]
-def power(a: float, n: int) -> float:
-    if n == 0:
-        return 1
-    if n == 1:
-        return a
-    return a * power(a, n-1)
-\end{lstlisting}
-    \end{sol}
-\end{example}
+% \begin{example}
+%     给出计算非零实数 $a$ 的非负整数幂 $a^n$ 的递归算法.
+%     \begin{sol}
+%         我们知道, $a^n = a \cdot a^{n-1}$, 于是我们可以给出如下所示的递归算法:
+% \begin{lstlisting}[language=Python]
+% def power(a: float, n: int) -> float:
+%     if n == 0:
+%         return 1
+%     if n == 1:
+%         return a
+%     return a * power(a, n-1)
+% \end{lstlisting}
+%     \end{sol}
+% \end{example}
 
-\begin{example}
-    给出求满足 $a<b$ 的两个非负整数 $a$ 和 $b$ 的最大公因子的递归算法.
-    \begin{sol}
-        由于 $\gcd(a,b) = \gcd(b \mod a, a)$, 当 $b>0$ 时 $\gcd(0, b) = b$,
-        于是利用 Euclid 算法, 我们有
-\begin{lstlisting}[language=Python]
-def gcd(a: int, b: int) -> int:
-    if a == 0:
-        return b
-    else:
-        return gcd(b % a, a)
-\end{lstlisting}
-    \end{sol}
-\end{example}
+% \begin{example}
+%     给出求满足 $a<b$ 的两个非负整数 $a$ 和 $b$ 的最大公因子的递归算法.
+%     \begin{sol}
+%         由于 $\gcd(a,b) = \gcd(b \mod a, a)$, 当 $b>0$ 时 $\gcd(0, b) = b$,
+%         于是利用 Euclid 算法, 我们有
+% \begin{lstlisting}[language=Python]
+% def gcd(a: int, b: int) -> int:
+%     if a == 0:
+%         return b
+%     else:
+%         return gcd(b % a, a)
+% \end{lstlisting}
+%     \end{sol}
+% \end{example}
 
 \chapter{逻辑、推理与证明}
 
