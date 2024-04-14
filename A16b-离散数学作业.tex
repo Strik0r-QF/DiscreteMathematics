@@ -1,8 +1,9 @@
-\documentclass[10pt,UTF8]{ctexbook} %% ctexart
+\documentclass[10pt,UTF8]{book} %% ctexart
 
 \title{\textbf{离散数学}讲义}
 \author{钱锋\thanks{Email: strik0r\_qf@mail.nwpu.edu.cn}}
 
+\usepackage{ctex}
 \usepackage{graphicx}
 \usepackage[toc]{multitoc}
 \usepackage{amsthm, amssymb, amsmath, mathrsfs, mhchem}
@@ -32,7 +33,7 @@
 \usepackage{titlesec} % 定义标题样式
 
 % 设置 chapter 标题样式
-\titleformat{\chapter}[hang]{\centering\heiti\Large\bfseries}{第\,\thechapter\,章}{1em}{}
+\titleformat{\chapter}[hang]{\centering\heiti\Large\bfseries}{专题\,\thechapter}{1em}{}
 
 % 定义 section 标题格式
 \titleformat{\section}[hang]{\heiti\centering\large\bfseries}{\thesection}{1em}{}
@@ -61,21 +62,32 @@
     \centering
         \vspace*{2cm}
         \includegraphics[width=0.5\textwidth]{pic/npu_2.png}\par
-        \vspace{1cm}
+        \vspace{1em}
         \includegraphics[width=0.5\textwidth]{pic/npu_1.png}\par
-    \vspace{1cm}
+    \vspace{2em}
         \begin{center}
-            \Huge \heiti \textbf{离散数学作业集}
+            \Huge \heiti \textbf{离散数学习题集}
 
-            Descrete Mathematics
+            Problem Set of Discrete Mathematics
         \end{center}
-        \vspace{5cm}
+        \vspace{3cm}
         \begin{center}
         \songti
-        \kaishu 数学与统计学院 \, \heiti\textbf{钱锋} \quad \songti 编
-        \vspace{0.5cm}
-
-    \today
+        \renewcommand\arraystretch{1.5}
+	\begin{tabular}{p{2cm} c c}
+    {姓\,\,\,\,\,\,\,\,\,\,\,\,名:} & \multicolumn{2}{c}{钱 \quad\quad 锋}\\
+    \cline{2-3}
+    % {编\,\,\,\,\,\,\,\,\,\,\,\,号:} & \multicolumn{2}{c}{13} \\
+    % \cline{2-3}
+    {班\,\,\,\,\,\,\,\,\,\,\,\,级:} & \multicolumn{2}{c}{14012203} \\
+    \cline{2-3}
+    {学\,\,\,\,\,\,\,\,\,\,\,\,号:} & \multicolumn{2}{c}{2022303324}\\
+    \cline{2-3}
+    {邮\,\,\,\,\,\,\,\,\,\,\,\,箱:} & \multicolumn{2}{c}{strik0r.qf@gmail.com}\\
+    \cline{2-3}
+    {日\,\,\,\,\,\,\,\,\,\,\,\,期:} & \multicolumn{2}{c}{\today}\\
+    \cline{2-3}
+	\end{tabular}
     \end{center}
 \end{titlepage}
 
@@ -632,6 +644,140 @@ $Q := \left\{ x \in A | L(x) \right\}$,
     \end{enumerate}
 \end{exercise}
 
+\chapter{集合}
+
+由于集合的交集、并集分别可以表示为 $AB$, $A+B$, 而集合 $A$ 在 $\varOmega$ 中的补集
+可以记作 $\bar A$, 因此我们在解决下述的问题时会使用这些记号代替 $\cap, \cup, \sim$.
+此外, 为了避免与集合的对称差产生记号冲突, 我们用 $A \oplus B$ 来表示集合的对称差,
+即 $A \oplus B = A \bar B + \bar A B$.
+
+此外, 方便起见, 我们给出关于差集运算的一条重要的性质:
+\[ A \setminus B = A - B = A - AB, \]
+当 $A, B \subset \varOmega$ 时, 
+\[ A - B = A \bar B. \]
+\begin{proof}
+    这是显然成立的, 因为
+    \[ \forall x \left(
+        x \in A\bar B
+        \equiv x \in A \wedge x \notin B 
+        \equiv x \in A - B
+    \right). \]
+\end{proof}
+
+\begin{exercise}
+    设 $S_1 = \varnothing$, $S_2 = \left\{ \varnothing \right\}$,
+    $S_3 = \mathcal{P}(\left\{ \varnothing \right\})$,
+    $S_4 = \mathcal{P}(\varnothing)$.
+    以下命题为假的是 \underline{\qquad \qquad \qquad}.
+    \begin{tasks}[label={\Alph*.}](2)
+        \task $S_2 \in S_4$
+        \task $S_1 \subset S_3$
+        \task $S_4 \subset S_2$
+        \task $S_4 \in S_3$
+    \end{tasks}
+    \begin{cmt}
+        根据幂集的定义, $S_3 = \left\{ \varnothing, \left\{ \varnothing \right\} \right\}$,
+        $S_4 = \left\{\varnothing\right\}$.
+        这是因为空集只有一个子集, 即它自身, 而单元素集合 $\left\{ \varnothing \right\}$
+        的子集有空集和它自身.
+        \newline A 选项, $\left\{ \varnothing \right\} \in \left\{\varnothing\right\}$,
+        这是不正确的, 通常而言我们讨论的集合不会包括其自身, 因此本题选 A.
+        \newline B 选项, $\varnothing \subset \left\{ \varnothing, \left\{
+            \varnothing
+        \right\} \right\}$, 这是成立的, 因为空集是任何集合的 (平凡的) 子集.
+        \newline C 选项, $\left\{ \varnothing \right\} \subset \left\{ \varnothing \right\}$,
+        这是成立的, 因为任何集合都是它自身的一个 (平凡的) 子集.
+        \newline D 选项, $\left\{ \varnothing \right\} \in \left\{ \varnothing, \left\{
+            \varnothing
+        \right\} \right\}$, 这是显然成立的.
+    \end{cmt}
+\end{exercise}
+
+\begin{exercise}
+    已知集合 $A, B$ 的对称差 $A \oplus B := (A - B) \cup (B - A)$.
+    设 $A = \left\{ 1,2,3 \right\}$, $B = \left\{ 1,2,3,4,5 \right\}$,
+    $C = \left\{2,3\right\}$, 则 $(A \cup B) \oplus C = $\underline{\qquad \qquad \qquad}.
+    \begin{cmt}
+        显然 $A \cup B = \left\{ 1,2,3,4,5 \right\}$.
+        于是 $(A \cup B) - C$ = $\left\{ 1,4,5 \right\}$,
+        $C - (A \cup B) = \varnothing$,
+        所以 $\left\{ 1,4,5 \right\}$ 即为所求.
+    \end{cmt}
+\end{exercise}
+
+\begin{exercise}
+    设集合 $A = \left\{ a,b,c \right\}$, $B = \left\{a,b\right\}$,
+    那么 $\mathcal{P}(A) - \mathcal{P}(B) =$ \underline{\qquad \qquad \qquad},
+    $\mathcal{P}(B) - \mathcal{P}(A) = $ \underline{\qquad \qquad \qquad}.
+    \begin{cmt}
+        我们把 $A, B$ 的子集对应到一个比特串, 我们约定在一个比特串的每一位分别对应元素 $a,b,c$
+        是否出现, 例如, $010$ 对应 $A$ 的一个子集 $\left\{ b \right\}$,
+        这是因为在这个子集中 $b$ 出现而 $a,c$ 不出现.
+        类似的, 比特串 $10$ 对应 $B$ 的一个子集 $\left\{a\right\}$,
+        但是为了后续方便运算, 我们人为的在集合 $B$ 的每一个子集的比特串后面都附加一个 $0$.
+        所以 $A$ 的子集所对应的比特串为
+        \[ 000, 001, 010, 011, 100, 101, 110, 111, \]
+        $B$ 的子集所对应的比特串为
+        \[ 000, 010, 100, 110, \]
+        为了计算 $\mathcal{P}(A) - \mathcal{P}(B)$,
+        我们从上述的第一组比特串中剔除掉第二组比特串, 得到
+        \[ 001, 011, 101, 111, \]
+        所以 \[ \mathcal{P}(A) - \mathcal{P}(B)
+        = \left\{
+            \left\{c\right\}, \left\{c,b\right\},
+            \left\{a,c\right\}, \left\{a,b,c\right\}
+        \right\}. \]
+        同理, 从第二组比特串中剔除掉第一组比特串, 得到
+        \[ \mathcal{P}(B) - \mathcal{P}(A) = \varnothing. \]
+    \end{cmt}
+\end{exercise}
+
+\begin{exercise}
+    设 $A = \left\{ a,b,c \right\}$, $B = \left\{ b,d,e \right\}$,
+    则 $A - B = $\underline{\qquad \qquad \qquad},
+    $A \oplus B =$\underline{\qquad \qquad \qquad}.
+    \begin{cmt}
+        令 $\varOmega = \left\{ a,b,c,d,e \right\}$,
+        则 $A, B \in \varOmega$. 并且 $A, B$ 可以用比特串表示为
+        \[ 11100, 01011, \]
+        于是 $A - B = A \bar B$, 而 $\bar B$ 所对应的比特串就是 $01011$ 的按位取反,
+        而 $A\bar B$ 就是它们所对应的比特串的按位与,
+        于是 \[ A \bar B = 11100 \,\&\, 10100 = 10100 = \left\{ a,c \right\}. \]
+        同理,
+        \[ \begin{aligned}
+            A \oplus B = A\bar B + B \bar A
+            = 10100 \mid (01011 \,\&\, 00011)
+            = 10100 \mid 00011
+            = 10111 = \left\{ a,c,d,e \right\}.
+        \end{aligned} \]
+    \end{cmt}
+\end{exercise}
+
+\begin{exercise}
+    化简 $\left(A + B\bar C \right) A + (B - (B - A))$.
+    \begin{sol}
+        由于 $B - A = B\bar A$, 于是
+        \[ 
+        \begin{aligned}
+            &\left(A + B\bar C \right) A + (B - (B - A))
+            = \left(A + B\bar C \right) A + (B - B\bar A) \\
+            &= \left(A + B\bar C \right) A + (B \overline{B \bar A})
+            = \left(A + B\bar C \right) A + B (\bar B + A) \\
+            &= AA + AB\bar C + B\bar B + AB
+            = A + AB \left( \bar C + \varOmega \right)
+            = A + AB = A.
+        \end{aligned}\]
+    \end{sol}
+\end{exercise}
+
+\begin{exercise}
+    证明 $A - (B - C) = (A - B) + AC$.
+    \begin{proof}
+        $A - (B - C) = A \overline{B-C} = A \overline{B \bar C}
+        = A \left( \bar B + C \right)$,
+        而 $(A-B) + AC = A\bar B + AC = A \left( \bar B + C \right)$.
+    \end{proof}
+\end{exercise}
 
 \input{LateX_tem/appendix.tex}
 

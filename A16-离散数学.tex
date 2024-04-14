@@ -36,6 +36,7 @@
 \usepackage{smartdiagram}
 \usepackage{longtable}
 \usepackage{booktabs}
+\usepackage{tasks}
 
 \begin{document}
 \everymath{\displaystyle}
@@ -1545,6 +1546,49 @@ $C$ 中. 即
 
 上述八条公理, 共称为 ZFC 公理系统, 即补充了选择公理的 Zermelo-Fraenkel 公理系统.
 好的, 我们点到为止, 关于公理化集合论的讨论就到这里了.
+
+\subsection{复习参考题}
+
+\begin{example}
+    设 $S_1 = \varnothing$, $S_2 = \left\{ \varnothing \right\}$,
+    $S_3 = \mathcal{P}(\left\{ \varnothing \right\})$,
+    $S_4 = \mathcal{P}(\varnothing)$.
+    以下命题为假的是 \underline{\qquad \qquad \qquad}.
+    \begin{tasks}[label={\Alph*.}](2)
+        \task $S_2 \in S_4$
+        \task $S_1 \subset S_3$
+        \task $S_4 \subset S_2$
+        \task $S_4 \in S_3$
+    \end{tasks}
+    \begin{cmt}
+        根据幂集的定义, $S_3 = \left\{ \varnothing, \left\{ \varnothing \right\} \right\}$,
+        $S_4 = \left\{\varnothing\right\}$.
+        这是因为空集只有一个子集, 即它自身, 而单元素集合 $\left\{ \varnothing \right\}$
+        的子集有空集和它自身.
+        \newline A 选项, $\left\{ \varnothing \right\} \in \left\{\varnothing\right\}$,
+        这是不正确的, 通常而言我们讨论的集合不会包括其自身, 因此本题选 A.
+        \newline B 选项, $\varnothing \subset \left\{ \varnothing, \left\{
+            \varnothing
+        \right\} \right\}$, 这是成立的, 因为空集是任何集合的 (平凡的) 子集.
+        \newline C 选项, $\left\{ \varnothing \right\} \subset \left\{ \varnothing \right\}$,
+        这是成立的, 因为任何集合都是它自身的一个 (平凡的) 子集.
+        \newline D 选项, $\left\{ \varnothing \right\} \in \left\{ \varnothing, \left\{
+            \varnothing
+        \right\} \right\}$, 这是显然成立的.
+    \end{cmt}
+\end{example}
+
+\begin{example}
+    已知集合 $A, B$ 的对称差 $A \oplus B := (A - B) \cup (B - A)$.
+    设 $A = \left\{ 1,2,3 \right\}$, $B = \left\{ 1,2,3,4,5 \right\}$,
+    $C = \left\{2,3\right\}$, 则 $(A \cup B) \oplus C = $\underline{\qquad \qquad \qquad}.
+    \begin{cmt}
+        显然 $A \cup B = \left\{ 1,2,3,4,5 \right\}$.
+        于是 $(A \cup B) - C$ = $\left\{ 1,4,5 \right\}$,
+        $C - (A \cup B) = \varnothing$,
+        所以 $\left\{ 1,4,5 \right\}$ 即为所求.
+    \end{cmt}
+\end{example}
 
 \section{映射与变换}
 
