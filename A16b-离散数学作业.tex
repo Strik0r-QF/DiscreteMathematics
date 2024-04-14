@@ -779,6 +779,389 @@ $Q := \left\{ x \in A | L(x) \right\}$,
     \end{proof}
 \end{exercise}
 
+\chapter{关系}
+
+\begin{exercise}
+    设 $A = \left\{ 0,1 \right\}$, $B = \left\{ 1,2 \right\}$,
+    则
+    \[ A \times B = \left\{
+        (0,1), (0,2), (1,1), (1,2)
+    \right\}, \]
+    \[ A \times A = \left(
+        (0,0), (0,1), (1,0), (1,1)
+    \right), \]
+    \[ A^2 \times B = \left\{
+        \begin{matrix}
+            ((0,0), 1), & ((0,0), 2), \\ 
+            ((0,1), 1), & ((0,1), 2), \\ 
+            ((1,0), 1), & ((1,0), 2), \\ 
+            ((1,1), 1), & ((1,1), 2) \\
+        \end{matrix}
+    \right\}, \]
+    \[ B \times A = \left\{
+        (1,0), (1,2),
+        (2,0), (2,1)
+    \right\}, \]
+    \[ \left( A \times B \right)^2
+    = \left\{ \begin{matrix}
+        ((0,1), (0,1)), & ((0,1), (0,2)), & ((0,1), (1,1)), & ((0,1), (1,2)), \\
+        ((0,2), (0,1)), & ((0,2), (0,2)), & ((0,2), (1,1)), & ((0,2), (1,2)), \\
+        ((1,1), (0,1)), & ((1,1), (0,2)), & ((1,1), (1,1)), & ((1,1), (1,2)), \\
+        ((1,2), (0,1)), & ((1,2), (0,2)), & ((1,2), (1,1)), & ((1,2), (1,2)) \\
+    \end{matrix} \right\} \]
+\end{exercise}
+
+\begin{exercise}
+    设 $X = \left\{ 0, 1, 2, 3 \right\}$,
+    $X$ 上有如下两个关系:
+    \[ R_1 = \left\{ (i,j) | j = i+1 \vee j = i/2 \right\}, \]
+    \[ R_2 = \left\{ (i,j) | i = j+2 \right\}, \]
+    求复合关系 $R_1 \circ R_2$, $R_2 \circ R_1$, $R_1 \circ R_2 \circ R_1$.
+    \begin{sol}
+        由下图可知,
+        \begin{figure}[H]
+            \centering
+
+
+            \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+            \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+            %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+            
+            
+            % Text Node
+            \draw (122,88.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
+            % Text Node
+            \draw (122,129.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+            % Text Node
+            \draw (122,165.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+            % Text Node
+            \draw (122,201.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+            % Text Node
+            \draw (217,88.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
+            % Text Node
+            \draw (217,129.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+            % Text Node
+            \draw (217,165.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+            % Text Node
+            \draw (217,201.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+            % Text Node
+            \draw (311,88.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
+            % Text Node
+            \draw (311,129.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+            % Text Node
+            \draw (311,165.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+            % Text Node
+            \draw (311,201.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+            % Text Node
+            \draw (162,62.4) node [anchor=north west][inner sep=0.75pt]    {$R_{1}$};
+            % Text Node
+            \draw (260,62.4) node [anchor=north west][inner sep=0.75pt]    {$R_{2}$};
+            % Text Node
+            \draw (400,88.4) node [anchor=north west][inner sep=0.75pt]    {$0$};
+            % Text Node
+            \draw (400,129.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+            % Text Node
+            \draw (400,165.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+            % Text Node
+            \draw (400,201.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+            % Text Node
+            \draw (346,62.4) node [anchor=north west][inner sep=0.75pt]    {$R_{1}$};
+            % Connection
+            \draw    (137,99.88) -- (211.25,131.93) ;
+            \draw [shift={(214,133.12)}, rotate = 203.34] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+            % Connection
+            \draw    (137,140.41) -- (211.19,168.53) ;
+            \draw [shift={(214,169.59)}, rotate = 200.75] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+            % Connection
+            \draw    (137,176.41) -- (211.19,204.53) ;
+            \draw [shift={(214,205.59)}, rotate = 200.75] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+            % Connection
+            \draw    (137,169.59) -- (211.19,141.47) ;
+            \draw [shift={(214,140.41)}, rotate = 159.25] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+            % Connection
+            \draw    (232,165.63) -- (305.68,105.27) ;
+            \draw [shift={(308,103.37)}, rotate = 140.68] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+            % Connection
+            \draw    (232,202.11) -- (305.62,145.72) ;
+            \draw [shift={(308,143.89)}, rotate = 142.55] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+            % Connection
+            \draw    (326,100.15) -- (394.28,131.6) ;
+            \draw [shift={(397,132.85)}, rotate = 204.73] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+            % Connection
+            \draw    (326,140.64) -- (394.22,168.23) ;
+            \draw [shift={(397,169.36)}, rotate = 202.02] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+            % Connection
+            \draw    (326,176.64) -- (394.22,204.23) ;
+            \draw [shift={(397,205.36)}, rotate = 202.02] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+            % Connection
+            \draw    (326,169.36) -- (394.22,141.77) ;
+            \draw [shift={(397,140.64)}, rotate = 157.98] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+            
+            \end{tikzpicture}
+        \end{figure}
+        \[ R_1 \circ R_2 = \left\{ (1,0), (2,1) \right\}. \]
+        \[ R_2 \circ R_1 = \left\{
+            (2,1), (3,2)
+        \right\}, \]
+        \[ R_1 \circ R_2 \circ R_3 = \left\{
+            (1,1), (2,2)
+        \right\}. \]
+    \end{sol}
+\end{exercise}
+
+\begin{exercise}
+    设有 $X$ 上的关系 $R_1, R_2, R_3$, 证明:
+    \begin{enumerate}[label={${\arabic*}^\circ$}, itemsep=0pt]
+        \item 如果 $R_1 \subset R_2$, 则 $R_1 \circ R_3 \subset R_2 \circ R_3$.
+        \item 如果 $R_1 \subset R_2$, 则 $R_2 \circ R_1 \subset R_3 \circ R_2$.
+    \end{enumerate}
+    \begin{proof}
+        根据子集的定义, $R_1 \subset R_2 \equiv \forall (x,y) \in R_1 \left(
+            (x, y) \in R_2
+        \right)$.
+        则 \[ R_1 \circ R_3 := \left\{ (x,z) \in X^2 | \exists y \in X \left(
+            x R_1 y \wedge y R_3 z
+        \right) \right\}, \]
+        由于 $x R_1 y$ 必有 $x R_2 y$,
+        因此 \[ \forall (x,z) \in R_1 \circ R_3 \left(
+            x R_2 y \wedge y R_3 z
+        \right), \]
+        即 $\forall (x,z) \left( (x,z) \in R_1 \circ R_3 \Rightarrow 
+        (x,z) \in R_2 \circ R_3 \right)$.
+        同理, \[ \forall x,y,z \left(
+            z R_3 x \wedge x R_1 y \Rightarrow z R_3 x \wedge x R_2 y
+        \right), \]
+        于是 $\forall (z,x) \left( (z,x) \in R_3 \circ R_1 \Rightarrow
+        (z,x) \in R_3 \circ R_2 \right)$.
+    \end{proof}
+\end{exercise}
+
+\begin{exercise}
+    设 $A = \left\{ 1,2 \right\}$,
+    求 $A \times \mathcal{P}(A)$.
+    \begin{sol}
+        容易得到 $\mathcal{P}(A) = \left\{
+            \varnothing, \left\{1\right\}, \left\{2\right\},
+            \left\{1,2\right\}
+        \right\}$, 因此
+        \[ A \times \mathcal{P}(A) = \left\{
+            \begin{matrix}
+                (1, \varnothing), & (1, \left\{1\right\}), & (1, \left\{2\right\}), & (1, \left\{1,2\right\}) \\
+                (2, \varnothing), & (2, \left\{1\right\}), & (2, \left\{2\right\}), & (2, \left\{1,2\right\}) \\
+            \end{matrix}
+        \right\}. \]
+    \end{sol}
+\end{exercise}
+
+\begin{example}
+    设 $R_1, R_2$ 是集合 $A = \left\{ 1,2,3,4 \right\}$ 上的二元关系,
+    其中 $R_1 = \left\{ (1,1), (1,2), (2,4) \right\}$,
+    $R_2 = \left\{ (1,4), (2,3), (2,4), (3,2) \right\}$,
+    则 $R_1 \circ R_2 = \left\{
+        (1,4), (1,3), (2,2)
+    \right\}$.
+    \begin{figure}[H]
+        \centering
+
+
+        \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+        %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+        
+        
+        % Text Node
+        \draw (142,108.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+        % Text Node
+        \draw (142,149.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+        % Text Node
+        \draw (142,185.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+        % Text Node
+        \draw (142,221.4) node [anchor=north west][inner sep=0.75pt]    {$4$};
+        % Text Node
+        \draw (237,108.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+        % Text Node
+        \draw (237,149.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+        % Text Node
+        \draw (237,185.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+        % Text Node
+        \draw (237,221.4) node [anchor=north west][inner sep=0.75pt]    {$4$};
+        % Text Node
+        \draw (331,108.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+        % Text Node
+        \draw (331,149.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+        % Text Node
+        \draw (331,185.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+        % Text Node
+        \draw (331,221.4) node [anchor=north west][inner sep=0.75pt]    {$4$};
+        % Text Node
+        \draw (182,82.4) node [anchor=north west][inner sep=0.75pt]    {$R_{1}$};
+        % Text Node
+        \draw (280,82.4) node [anchor=north west][inner sep=0.75pt]    {$R_{2}$};
+        % Connection
+        \draw    (157,116) -- (231,116) ;
+        \draw [shift={(234,116)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (157,119.88) -- (231.25,151.93) ;
+        \draw [shift={(234,153.12)}, rotate = 203.34] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (157,163.82) -- (231.61,220.37) ;
+        \draw [shift={(234,222.18)}, rotate = 217.16] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (252,126.82) -- (326.08,215.87) ;
+        \draw [shift={(328,218.18)}, rotate = 230.24] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (252,160.45) -- (325.2,188.48) ;
+        \draw [shift={(328,189.55)}, rotate = 200.96] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (252,163.89) -- (325.62,220.28) ;
+        \draw [shift={(328,222.11)}, rotate = 217.45] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (252,189.55) -- (325.2,161.52) ;
+        \draw [shift={(328,160.45)}, rotate = 159.04] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        
+        \end{tikzpicture}
+    \end{figure}
+\end{example}
+
+\begin{exercise}
+    设集合 $A = \left\{ a,b \right\}$, $R$ 是 $\mathcal{P}(A)$ 上的包含关系,
+    由于 $\mathcal{P}(A) = \left\{
+        \varnothing, \left\{a\right\}, \left\{b\right\}, \left\{a,b\right\}
+    \right\}$, 那么 $R = \subset$.
+    \begin{figure}[H]
+        \centering
+        \begin{center}
+            \begin{tikzpicture}[scale=0.2]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (35.2,-18.4) circle (3);
+            \draw (35.2,-18.4) node {$\left\{a\right\}$};
+            \draw [black] (23.7,-36) circle (3);
+            \draw (23.7,-36) node {$\left\{b\right\}$};
+            \draw [black] (18.4,-21.3) circle (3);
+            \draw (18.4,-21.3) node {$\varnothing$};
+            \draw [black] (42.1,-32.9) circle (3);
+            \draw (42.1,-32.9) node {$\left\{a,b\right\}$};
+            \draw [black] (15.513,-22.071) arc (312.69007:24.69007:2.25);
+            \fill [black] (16.03,-19.48) -- (15.86,-18.55) -- (15.12,-19.23);
+            \draw [black] (21.36,-20.79) -- (32.24,-18.91);
+            \fill [black] (32.24,-18.91) -- (31.37,-18.55) -- (31.54,-19.54);
+            \draw [black] (19.42,-24.12) -- (22.68,-33.18);
+            \fill [black] (22.68,-33.18) -- (22.88,-32.26) -- (21.94,-32.59);
+            \draw [black] (21.09,-22.62) -- (39.41,-31.58);
+            \fill [black] (39.41,-31.58) -- (38.91,-30.78) -- (38.47,-31.68);
+            \draw [black] (22.96,-38.895) arc (13.39871:-274.60129:2.25);
+            \fill [black] (20.95,-37.17) -- (20.06,-36.87) -- (20.29,-37.85);
+            \draw [black] (45.081,-33.108) arc (113.74356:-174.25644:2.25);
+            \fill [black] (43.75,-35.39) -- (43.61,-36.33) -- (44.53,-35.92);
+            \draw [black] (36.49,-21.11) -- (40.81,-30.19);
+            \fill [black] (40.81,-30.19) -- (40.92,-29.25) -- (40.02,-29.68);
+            \draw [black] (36.24,-15.599) arc (187.36342:-100.63658:2.25);
+            \fill [black] (38.06,-17.52) -- (38.91,-17.91) -- (38.79,-16.92);
+            \draw [black] (26.66,-35.5) -- (39.14,-33.4);
+            \fill [black] (39.14,-33.4) -- (38.27,-33.04) -- (38.44,-34.02);
+            \end{tikzpicture}
+            \end{center}
+    \end{figure}
+\end{exercise}
+
+\begin{exercise}
+    设集合 $A = \left\{ 1,2,3,4 \right\}$, $A$ 上的二元关系
+    \[ R_1 = \left\{ (1,1), (1,3), (1,4), (2,4), (3,3), (4,4) \right\}, \]
+    \[ R_2 = \left\{ (1,2), (1,3), (2,3), (4,4) \right\}, \]
+    \[ R_3 = \left\{ (1,1), (2,2), (3,3), (4,4) \right\}, \]
+    则 \[ R_1 \cap R_2 = \left\{
+        (1,3), (4,4)
+    \right\}, \] 
+    \[ R_2 \cup R_3 = \left\{
+        (1,1), (1,2), (1,3), (2,2), (2,3), (3,3), (4,4)
+    \right\}. \] 
+    \[ \sim R_1 = A^2 - R_1 = \left\{
+        (1,2), (2,1), (2,2), (2,3),
+        (3,1), (3,2), (3,4), (4,1), (4,2), (4,3)
+    \right\}. \]
+    \[ R_1 - R_3 = \left\{
+        (1,3), (1,4), (2,4)
+    \right\}, \]
+    \[ R_1 \circ R_2 = \left\{
+        (1,2), (1,3), (1,4),
+        (2,4),
+        (4,4)
+    \right\}. \]
+    \begin{figure}[H]
+        \centering
+
+
+        \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+        %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+        
+        
+        % Text Node
+        \draw (162,128.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+        % Text Node
+        \draw (162,169.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+        % Text Node
+        \draw (162,205.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+        % Text Node
+        \draw (162,241.4) node [anchor=north west][inner sep=0.75pt]    {$4$};
+        % Text Node
+        \draw (257,128.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+        % Text Node
+        \draw (257,169.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+        % Text Node
+        \draw (257,205.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+        % Text Node
+        \draw (257,241.4) node [anchor=north west][inner sep=0.75pt]    {$4$};
+        % Text Node
+        \draw (351,128.4) node [anchor=north west][inner sep=0.75pt]    {$1$};
+        % Text Node
+        \draw (351,169.4) node [anchor=north west][inner sep=0.75pt]    {$2$};
+        % Text Node
+        \draw (351,205.4) node [anchor=north west][inner sep=0.75pt]    {$3$};
+        % Text Node
+        \draw (351,241.4) node [anchor=north west][inner sep=0.75pt]    {$4$};
+        % Text Node
+        \draw (202,102.4) node [anchor=north west][inner sep=0.75pt]    {$R_{1}$};
+        % Text Node
+        \draw (300,102.4) node [anchor=north west][inner sep=0.75pt]    {$R_{2}$};
+        % Connection
+        \draw    (177,136) -- (251,136) ;
+        \draw [shift={(254,136)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (177,143.29) -- (251.67,203.82) ;
+        \draw [shift={(254,205.71)}, rotate = 219.03] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (177,146.71) -- (252.07,236) ;
+        \draw [shift={(254,238.29)}, rotate = 229.95] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (177,183.82) -- (251.61,240.37) ;
+        \draw [shift={(254,242.18)}, rotate = 217.16] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (177,213) -- (251,213) ;
+        \draw [shift={(254,213)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (177,249) -- (251,249) ;
+        \draw [shift={(254,249)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (272,139.93) -- (345.25,171.88) ;
+        \draw [shift={(348,173.07)}, rotate = 203.57] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (272,143.37) -- (345.68,203.73) ;
+        \draw [shift={(348,205.63)}, rotate = 219.32] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (272,180.45) -- (345.2,208.48) ;
+        \draw [shift={(348,209.55)}, rotate = 200.96] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        % Connection
+        \draw    (272,249) -- (345,249) ;
+        \draw [shift={(348,249)}, rotate = 180] [fill={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.08]  [draw opacity=0] (5.36,-2.57) -- (0,0) -- (5.36,2.57) -- cycle    ;
+        
+        \end{tikzpicture}
+    \end{figure}
+\end{exercise}
+
 \input{LateX_tem/appendix.tex}
 
 \onecolumn
