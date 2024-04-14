@@ -31,6 +31,7 @@
 
 \usepackage{tasks}
 \usepackage{titlesec} % 定义标题样式
+\usepackage{longtable, booktabs}
 
 % 设置 chapter 标题样式
 \titleformat{\chapter}[hang]{\centering\heiti\Large\bfseries}{专题\,\thechapter}{1em}{}
@@ -1160,6 +1161,247 @@ $Q := \left\{ x \in A | L(x) \right\}$,
         
         \end{tikzpicture}
     \end{figure}
+\end{exercise}
+
+\begin{exercise}
+    设 $X$ 上的关系 $R$ 满足对称性和传递性, 问 $R$ 是否一定满足反身性,
+    并说明理由.
+    \begin{cmt}
+        由于 $R$ 具有对称性, 因此如果 $a R b$ 则一定有 $b R a$,
+        同时由于它具有传递性, 因此有 $a R a$.
+        看起来这似乎是成立的, 但我们可以构造这样的一个关系 $R$ 来说明
+        这其实并不成立, 它满足以下两个条件:
+        \begin{enumerate}[label={${\arabic*}^\circ$}, itemsep=0pt]
+            \item 不存在任何的元素 $b \in X$ 使得
+            $a R b$, 即在关系 $R$ 的表示图中 $a$ 是一个孤立点,
+            \item $(a, a) \notin R$.
+        \end{enumerate}
+        那么此时关系 $R$ 就不具有自反性.
+    \end{cmt}
+\end{exercise}
+
+\begin{exercise}
+    设 $X$ 上的关系 $R, S$ 是自反的, 试证明
+    $R \circ S$, $R \cap S$ 也是自反的.
+    \begin{proof}
+        由于 $R, S$ 自反, 所以 $\forall x \in X (x R x \wedge x S x)$,
+        那么 $(x,x) \in R \circ S$, 事实上, 只需取 $y = x$ 即有
+        $x R y$ 且 $y S x$. 类似地,
+        由于 $R, S$ 是自反的, 所以所有形如 $(x, x)$ 的元组 (即两个
+        分量相同的元组) 都在 $R, S$ 中, 所以它们将全部出现在
+        $R \cap S$ 中.
+    \end{proof}
+\end{exercise}
+
+\begin{exercise}
+    设集合 $A = \left\{ a,b,c \right\}$, $A$ 上的二元关系
+    $R = \left\{ (a,a), (b,b) \right\}$
+    不具备反身性. 这是因为 $\exists c \in A \left( (c,c) \notin R \right)$,
+    因此它显然也不是等价关系.
+    同时, 由于同时不存在 $(x,y), (y,x)$ 这样的元组对, 因此它是反对称的.
+\end{exercise}
+
+\begin{exercise}
+    判断下列图中关系的性质.
+    \begin{figure}[H]
+        \begin{center}
+            \begin{tikzpicture}[scale=0.15]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (37.7,-18.1) circle (3);
+            \draw (37.7,-18.1) node {$a$};
+            \draw [black] (26.8,-37.1) circle (3);
+            \draw (26.8,-37.1) node {$b$};
+            \draw [black] (49.1,-37.1) circle (3);
+            \draw (49.1,-37.1) node {$c$};
+            \draw [black] (35.919,-15.7) arc (244.30485:-43.69515:2.25);
+            \fill [black] (38.52,-15.23) -- (39.32,-14.72) -- (38.42,-14.29);
+            \draw [black] (27.468,-34.176) arc (164.49046:135.82512:32.655);
+            \fill [black] (35.51,-20.15) -- (34.6,-20.38) -- (35.31,-21.07);
+            \draw [black] (37.081,-21.034) arc (-14.69107:-44.99335:30.987);
+            \fill [black] (29.02,-35.08) -- (29.94,-34.87) -- (29.23,-34.17);
+            \draw [black] (40.116,-19.875) arc (50.27817:11.64935:25.135);
+            \fill [black] (48.67,-34.13) -- (49,-33.25) -- (48.02,-33.45);
+            \draw [black] (46.924,-35.036) arc (-135.87128:-162.20121:35.958);
+            \fill [black] (38.5,-20.99) -- (38.27,-21.91) -- (39.22,-21.6);
+            \end{tikzpicture}
+            \end{center}
+    \end{figure}
+    该关系满足对称性, 但不满足传递性和自反性, 这是因为 $(c,a), (a,b) \in R$,
+    但 $(c,b) \notin R$. 它也不是反自反和和反对称的.
+    \begin{figure}[H]
+        \centering
+        \begin{center}
+            \begin{tikzpicture}[scale=0.15]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (37.7,-18.1) circle (3);
+            \draw (37.7,-18.1) node {$a$};
+            \draw [black] (26.8,-37.1) circle (3);
+            \draw (26.8,-37.1) node {$b$};
+            \draw [black] (49.1,-37.1) circle (3);
+            \draw (49.1,-37.1) node {$c$};
+            \draw [black] (26.768,-34.103) arc (-183.89004:-235.79439:19.123);
+            \fill [black] (26.77,-34.1) -- (27.32,-33.34) -- (26.32,-33.27);
+            \draw [black] (40.445,-19.301) arc (61.33933:0.58818:17.08);
+            \fill [black] (40.44,-19.3) -- (40.91,-20.12) -- (41.39,-19.25);
+            \end{tikzpicture}
+            \end{center}
+    \end{figure}
+    该关系不满足反身性、对称性和传递性.
+    但它是反自反和反对称的, 因为没有任何一个节点成环,
+    也没有成对的有向边, 能形成链条的有向边也并没有形成闭合的三角形.
+    但它是反对称的和反自反的, 因为没有形如 $(x,x)$ 的元组,
+    也没有一对元组同时满足 $(x,y), (y,x) \in R$.
+    \begin{figure}[H]
+        \centering
+        \begin{center}
+            \begin{tikzpicture}[scale=0.15]
+            \tikzstyle{every node}+=[inner sep=0pt]
+            \draw [black] (37.7,-18.1) circle (3);
+            \draw (37.7,-18.1) node {$a$};
+            \draw [black] (26.8,-37.1) circle (3);
+            \draw (26.8,-37.1) node {$b$};
+            \draw [black] (49.1,-37.1) circle (3);
+            \draw (49.1,-37.1) node {$c$};
+            \draw [black] (36.377,-15.42) arc (234:-54:2.25);
+            \fill [black] (39.02,-15.42) -- (39.9,-15.07) -- (39.09,-14.48);
+            \draw [black] (25.654,-39.86) arc (5.18593:-282.81407:2.25);
+            \fill [black] (23.91,-37.87) -- (23.07,-37.44) -- (23.16,-38.44);
+            \draw [black] (51.93,-38.06) arc (99:-189:2.25);
+            \fill [black] (50.06,-39.93) -- (49.69,-40.8) -- (50.68,-40.64);
+            \draw [black] (47.56,-34.53) -- (39.24,-20.67);
+            \fill [black] (39.24,-20.67) -- (39.23,-21.62) -- (40.08,-21.1);
+            \draw [black] (46.1,-37.1) -- (29.8,-37.1);
+            \fill [black] (29.8,-37.1) -- (30.6,-37.6) -- (30.6,-36.6);
+            \draw [black] (28.29,-34.5) -- (36.21,-20.7);
+            \fill [black] (36.21,-20.7) -- (35.38,-21.15) -- (36.24,-21.64);
+            \end{tikzpicture}
+            \end{center}
+    \end{figure}
+    该关系是自反的, 同时不是反自反的,
+    因为每一个节点都成环, 同时是传递的, 因为 $cRb$, $bRa$
+    的同时也有 $cRa$. 但它不是对称的, 同时它是反对称的, 这是因为没有成对的有向边.
+\end{exercise}
+
+\begin{exercise}
+    设集合 $A = \left\{a,b,c,d\right\}$, 判定下列关系哪些是自反的、对称的、反对称的、传递的.
+    {
+    \begin{longtable}{p{15em}|cccc}
+        \hline
+        % 表头
+        \textbf{关系} & \textbf{自反性} & \textbf{对称性} & \textbf{反对称性} & \textbf{传递性} \\
+        \hline
+        \endhead
+        \hline
+        \endfoot
+    
+        % 表格内容
+        $R_1 = \left\{ (a,a), (b,a) \right\}$
+        & \textbf{F} & \textbf{F} & \textbf{T} & \textbf{T} \\ 
+        $R_2 = \left\{ (c,d) \right\}$
+        & \textbf{F} & \textbf{F} & \textbf{T} & \textbf{T} \\ 
+        $R_3 = \left\{ (a,a), (b,b), (c,c) \right\}$
+        & \textbf{T} & \textbf{T} & \textbf{T} & \textbf{T} \\
+    \end{longtable}}
+\end{exercise}
+
+\begin{exercise}
+    设 $X = \left\{ a,b,c \right\}$ 上的关系
+    \[ R_1 = \left\{ (a,b), (a,c), (c,b) \right\}, \]
+    \[ R_2 = \left\{ (a,b), (b,c), (c,c) \right\}, \]
+    \[ R_3 = \left\{ (a,b), (b,a), (c,c) \right\}, \]
+    \[ R_4 = \left\{ (a,b), (b,c), (c,a) \right\}, \]
+    求它们的传递闭包.
+    \begin{sol}
+        给定 $X$ 中元素的一个排列 $abc$, 那么 $R_1, R_2, R_3, R_4$
+        关系的表示矩阵分别为
+        \[ \begin{bmatrix}
+            0 & 1 & 1 \\
+            0 & 0 & 0 \\
+            0 & 1 & 0 \\
+        \end{bmatrix}, \quad 
+        \begin{bmatrix}
+            0 & 1 & 0 \\
+            0 & 0 & 1 \\
+            0 & 0 & 1 \\
+        \end{bmatrix}, \quad 
+        \begin{bmatrix}
+            0 & 1 & 0 \\
+            1 & 0 & 0 \\
+            0 & 0 & 1 \\
+        \end{bmatrix}, \quad 
+        \begin{bmatrix}
+            0 & 1 & 0 \\
+            0 & 0 & 1 \\
+            1 & 0 & 0 \\
+        \end{bmatrix}, \]
+        我们使用 Warshall 算法来求它们的传递闭包, Warshall 算法
+        的计算方式为, {\kaishu 对于关系矩阵中的每一列,
+        如果第 $j$ 列、第 $i$ 行处的元素 $a_{ij} = 1$,
+        就把第 $j$ 行加到第 $i$ 行}, 即
+\begin{lstlisting}
+procedure Warshall(M: Matrix) // M 为关系 R 的矩阵
+for k = 1 ... n
+    for i = 1 ... n     
+        // 如果 (i,j) 元为 1, 则将第 j 行加到第 i 行
+        if (M[i,j] == 1) { M[i,:] += M[j,:] }
+\end{lstlisting}
+    于是它们的传递闭包对应的矩阵为
+    \[ \begin{bmatrix}
+        0 & 1 & 1 \\
+        0 & 1 & 1 \\
+        0 & 1 & 0 \\
+    \end{bmatrix}, \quad 
+    \begin{bmatrix}
+        0 & 1 & 0 \\
+        0 & 1 & 1 \\
+        0 & 0 & 1 \\
+    \end{bmatrix}, \quad 
+    \begin{bmatrix}
+        1 & 1 & 0 \\
+        1 & 1 & 0 \\
+        0 & 0 & 1 \\
+    \end{bmatrix}, \quad 
+    \begin{bmatrix}
+        1 & 1 & 1 \\
+        1 & 1 & 1 \\
+        1 & 1 & 1 \\
+    \end{bmatrix}. \]
+    \end{sol}
+\end{exercise}
+
+\begin{exercise}
+    设有 $X$ 上的关系 $R_1, R_2$, 证明
+    \begin{enumerate}[label={${\arabic*}^\circ$}, itemsep=0pt]
+        \item $r(R_1 \cup R_2) = r(R_1) \cup r(R_2)$.
+        \item $s(R_1 \cup R_2) = s(R_1) \cup s(R_2)$.
+        \item $t(R_1 \cup R_2) \supset t(R_1) \cup t(R_2)$.
+    \end{enumerate}
+    \begin{proof}
+        由于关系 $R$ 的自反闭包 $r(R)$ 是 $R \cup \Delta$,
+        其中 $\Delta = \left\{
+            (a,a) | a \in X
+        \right\}$ 称为 $A$ 上的对角关系. 那么
+        \[ r(R_1 \cup R_2) = R_1 \cup R_2 \cup \Delta, \]
+        \[ r(R_1) \cup r(R_2) = (R_1 \cup \Delta) \cup (R_2 \cup \Delta)
+        = R_1 \cup R_2 \cup \Delta, \]
+        因此 $1^\circ$ 成立.
+        关系 $R$ 的对称闭包 $s(R)$ 是 $R \cup R^{-1}$,
+        其中 $R^{-1} = \left\{ (b,a) | (a,b) \in R \right\}$
+        称为 $R$ 的逆, 因此
+        \[ s(R_1 + R_2) = (R_1 + R_2) + (R_1 + R_2)^{-1}
+        = R_1 + R_2 + R_1^{-1} + R_2^{-1}, \]
+        \[ s(R_1) + s(R_2) = R_1 + R_1^{-1} + R_2 + R_2^{-1}. \]
+        因此 $2^\circ$ 成立.
+        由于关系 $R$ 的传递闭包就是 $R$ 的连通性关系 $R^*$,
+        因此
+        \[ t(R_1 \cup R_2) = \bigcup_{n=1}^{\infty}
+        (R_1 \cup R_2)^{(n)}, \]
+        集合 $(R_1 \cup R_2)^{(n)}$ 是这样的元组 $(a,b)$
+        的集合: 在 $R_1 \cup R_2$ 中至少有一条路径长度为 $n$
+        的从 $a$ 到 $b$ 的路径. 而 $\forall n \in \mathbb{N}^+ \left(
+            R_1^{(n)} \cup R_2^{(n)} \subset (R_1 \cup R_2)^{(n)}
+        \right)$, 因此 $3^\circ$ 成立.
+    \end{proof}
 \end{exercise}
 
 \input{LateX_tem/appendix.tex}
