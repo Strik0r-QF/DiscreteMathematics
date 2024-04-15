@@ -29,7 +29,7 @@
 
 \input{LaTeX_tem/fancyhdr_settings.tex}
 \input{LaTeX_tem/titlesec_settings.tex}
-\input{LaTeX_tem/geometry_settings.tex}
+\input{LaTeX_tem/geometry_b5_settings.tex}
 \input{LaTeX_tem/mdframed_settings.tex}
 \input{LaTeX_tem/listings_settings.tex}
 
@@ -107,7 +107,7 @@
 \pagenumbering{roman} % 切换回罗马数字页码
 \addtocontents{toc}{\protect\thispagestyle{empty}}
 \pagestyle{plain}
-{\tableofcontents}
+{\small\tableofcontents}
 \newpage
 \thispagestyle{empty}
 \cleardoublepage % 确保正文从奇数页开始
@@ -967,12 +967,12 @@ $\exists x \left(P(x)\right)$ 的量化命题的时候,
 {\captionof{table}{集合 $\left\{0,1,2\right\}$ 的子集} % 表格标题
 \label{集合 (0,1,2) 的子集}
 \begin{longtable}{c|ccc|c}
-    \toprule
+    \hline
     % 表头
     \textbf{比特串} & \textbf{元素} $2$ & \textbf{元素} $1$ & \textbf{元素} $0$ & \textbf{对应的子集} \\
-    \midrule
+    \hline
     \endhead
-    \bottomrule
+    \hline
     \endfoot
 
     % 表格内容
