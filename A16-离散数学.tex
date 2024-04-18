@@ -29,7 +29,7 @@
 
 \input{LaTeX_tem/fancyhdr_settings.tex}
 \input{LaTeX_tem/titlesec_settings.tex}
-\input{LaTeX_tem/geometry_b5_settings.tex}
+\input{LaTeX_tem/geometry_settings.tex}
 \input{LaTeX_tem/mdframed_settings.tex}
 \input{LaTeX_tem/listings_settings.tex}
 
@@ -2750,6 +2750,41 @@ $B^n$ 是这个布尔函数的定义域, $B$ 是这个布尔函数的到达域. 
     $\bar x$ & $\lnot x$ & 补集 $\bar X$ \\
 \end{longtable}}
 
+\subsection{$0-1$ 矩阵}
+
+所有元素都是布尔变量的矩阵称为 $0-1$ 矩阵, 这就是说, $0-1$ 矩阵
+中的元素非 $0$ 即 $1$. $0-1$ 矩阵是对离散结构进行表示和建模的重要工具.
+
+\begin{definition}
+    设 $\boldsymbol{A}, \boldsymbol{B} \in B^\mathrm{m \times n}$,
+    即 $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 为 $m \times n$ $0-1$ 矩阵,
+    $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的并记作
+    $\boldsymbol{A} \vee \boldsymbol{B}$, 其元素
+    \[ \boldsymbol{A} \vee \boldsymbol{B}[i,j]
+    = a_{ij} \vee b_{ij} \]
+    为对应位置处元素的逻辑或.
+    $\boldsymbol{A}$ 与 $\boldsymbol{B}$ 的交记作
+    $\boldsymbol{A} \wedge \boldsymbol{B}$, 其元素
+    \[ \boldsymbol{A} \wedge \boldsymbol{B}[i,j]
+    = a_{ij} \wedge b_{ij} \]
+    为对应位置处元素的逻辑与.
+\end{definition}
+
+\begin{definition}[布尔积]
+    设 $\boldsymbol{A} = [a_{ij}] \in \left\{0,1\right\}^{m \times k}$,
+    $\boldsymbol{B} = [b_{ij}] \in \left\{0,1\right\}^{k \times n}$.
+    定义 $\boldsymbol{A},\boldsymbol{B}$ 的\textbf{布尔积} (boolean product)
+    是 $m \times n$ 阶的 $0-1$ 矩阵, 记作 $\boldsymbol{A} \odot \boldsymbol{B}$, 其中
+    \begin{equation}
+        c_{ij} = (a_{i1} \wedge b_{i1})\vee(a_{i2}\wedge b_{i2}) \vee \cdots \vee
+        (a_{ik} \wedge b_{kj}).
+    \end{equation}
+\end{definition}
+
+我们还可以定义 $0-1$ 方阵的布尔幂, 这些幂将用于以后对图论中路径的研究,
+它们通常用来对诸如计算机网络等各种通信链路进行建模. 方阵 $\boldsymbol{A}$
+的 $n$ 次布尔幂记作 $\boldsymbol{A}^n$.
+
 % \section{布尔函数的析取范式}
 % \section{布尔函数析取范式的化简}
 
@@ -4378,19 +4413,7 @@ $n$ 个变元可以构造出 $2^n$ 个极小项. 事实上, 极小项就是我�
 
 % \section{$0-1$ 矩阵}
 
-% \begin{definition}[Bool 积]
-%     设 $\boldsymbol{A} = [a_{ij}] \in \left\{0,1\right\}^{m \times k}$,
-%     $\boldsymbol{B} = [b_{ij}] \in \left\{0,1\right\}^{k \times n}$.
-%     定义 $\boldsymbol{A},\boldsymbol{B}$ 的\textbf{布尔积} (boolean product)
-%     是 $m \times n$ 阶的 $0-1$ 矩阵, 记作 $\boldsymbol{A} \odot \boldsymbol{B}$, 其中
-%     \begin{equation}
-%         c_{ij} = (a_{i1} \wedge b_{i1})\vee(a_{i2}\wedge b_{i2}) \vee \cdots \vee
-%         (a_{ik} \wedge b_{kj}).
-%     \end{equation}
-% \end{definition}
 
-% 我们还可以定义 $0-1$ 方针的 Bool 幂, 这些幂将用于以后对图论中路径的研究,
-% 它们通常用来对诸如计算机网络等各种通信链路进行建模.
 
 \begin{thebibliography}{1}
     \addcontentsline{toc}{chapter}{参考文献}
